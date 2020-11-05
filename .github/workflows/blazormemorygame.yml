@@ -12,6 +12,7 @@ env:
   PROJECT_PATH: BlazorMemoryGame
 jobs:
   build:
+    if : contains(toJson(github.event.commits), '--ci') == false
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
